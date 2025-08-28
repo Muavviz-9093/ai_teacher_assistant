@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    :root {
+      --primary: #2f80ed;
+      --bg: #f4f6fb;
+      --text-dark: #1c1c1c;
+      --text-light: #666;
+      --white: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-dark);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar Navigation */
+    .sidebar {
+      background-color: var(--white);
+      width: 220px;
+      padding: 30px 20px;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .sidebar h2 {
+      color: var(--primary);
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      padding: 10px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    /* Main Content */
+    .main {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .main h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: var(--text-dark);
+    }
+
+    .lecture-section h2 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .lecture-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .lecture-card {
+      background-color: var(--white);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .lecture-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .lecture-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .lecture-desc {
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 20px;
+      }
+
+      .sidebar h2 {
+        display: none;
+      }
+
+      .main {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar Navigation -->
+  <div class="sidebar">
+    <h2>Student</h2>
+    <a href="student_dashboard.html">Dashboard</a>
+    <a href="student_chatbot.html">Chatbot</a>
+    <a href="student_assignments.html">Assignments</a>
+    <a href="student_profile.html">Profile</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <h1>Welcome, Student</h1>
+
+    <section class="lecture-section">
+      <h2>Lectures</h2>
+      <div class="lecture-list">
+        <div class="lecture-card">
+          <div class="lecture-title">Maths: Algebra Basics</div>
+          <div class="lecture-desc">Understand variables, expressions, and linear equations.</div>
+        </div>
+        <div class="lecture-card">
+          <div class="lecture-title">Science: Human Digestive System</div>
+          <div class="lecture-desc">A voice lecture explaining each organ step-by-step.</div>
+        </div>
+        <div class="lecture-card">
+          <div class="lecture-title">English: Tenses Overview</div>
+          <div class="lecture-desc">Past, present, and future tense explained in audio + transcript.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
